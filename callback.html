@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tesla OAuth Callback</title>
+</head>
+<body style="background:black;color:#00ffcc;font-family:monospace;text-align:center;padding:50px;">
+
+<h1>🔐 Tesla Auth Callback</h1>
+<p id="output">Processing...</p>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+
+  if (code) {
+    document.getElementById("output").innerText = "Auth Code Received:\n\n" + code;
+    console.log("AUTH_CODE:", code);
+  } else {
+    document.getElementById("output").innerText = "No code found.";
+  }
+</script>
+
+</body>
+</html>
